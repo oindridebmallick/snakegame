@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Neon Snake — Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="hud">
+      <div class="title">NEON SNAKE</div>
+      <div class="stats">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="highscore">High: <span id="highscore">0</span></div>
+      </div>
+      <div class="controls-top">
+        <button id="startBtn" class="btn accent">Start</button>
+        <button id="pauseBtn" class="btn">Pause</button>
+        <button id="resetBtn" class="btn subtle">Reset</button>
+        <label class="speedLabel">Speed
+          <input id="speedRange" type="range" min="4" max="18" value="9" />
+        </label>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <canvas id="gameCanvas" width="720" height="720" aria-label="Snake game canvas"></canvas>
+
+      <!-- Mobile controls -->
+      <div class="mobile-controls" id="mobileControls" aria-hidden="true">
+        <div class="arrow up" data-dir="up">▲</div>
+        <div class="arrow left" data-dir="left">◀</div>
+        <div class="arrow down" data-dir="down">▼</div>
+        <div class="arrow right" data-dir="right">▶</div>
+      </div>
+
+      <!-- overlay messages -->
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-card">
+          <h2 id="overlayTitle">NEON SNAKE</h2>
+          <p id="overlayMsg">Press Start to play</p>
+          <div class="overlay-actions">
+            <button id="overlayStart" class="btn accent">Play</button>
+            <button id="overlayClose" class="btn subtle">Close</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <small>Use Arrow keys or WASD — Eat apples to grow 🍎 — Made for your folder <strong>snakegame</strong></small>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
